@@ -1,4 +1,4 @@
-const input = ``;
+import { input } from "./inputs/Day3Input.js";
 
 // ===== Part 1 =====
 
