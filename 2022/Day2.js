@@ -21,9 +21,6 @@ function parseSign(signLetter) {
     X: 1,
     Y: 2,
     Z: 3,
-    Rock: 1,
-    Paper: 2,
-    Scissors: 3,
     default: -1,
   };
 
