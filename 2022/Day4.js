@@ -18,7 +18,7 @@ const inputF = formatInput(input);
 
 // ===== Part 1 =====
 
-function isSubstring(pair1, pair2, allowPartialOverlap) {
+function isOverlapping(pair1, pair2, allowPartialOverlap) {
 	var min1 = parseInt(pair1[0]);
 	var max1 = parseInt(pair1[1]);
 	var min2 = parseInt(pair2[0]);
@@ -37,7 +37,7 @@ function isSubstring(pair1, pair2, allowPartialOverlap) {
 function countOverlaps(pairsArr, allowPartialOverlap) {
 	var count = 0;
 	pairsArr.forEach(pair => {
-		if(isSubstring(pair[0], pair[1], allowPartialOverlap) > 0) {
+		if(isOverlapping(pair[0], pair[1], allowPartialOverlap) > 0) {
 			count++;
 		}
 	});
