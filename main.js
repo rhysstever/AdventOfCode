@@ -37,6 +37,10 @@ import {
   subStrCounter1 as answer2022Day4Part1,
   subStrCounter2 as answer2022Day4Part2,
 } from "./2022/Day4.js";
+import {
+  part1Layout as answer2022Day5Part1,
+  part2Layout as answer2022Day5Part2,
+} from "./2022/Day5.js";
 
 const answers = {
   2021: [
@@ -51,6 +55,7 @@ const answers = {
     [answer2022Day2Part1, answer2022Day2Part2],
     [answer2022Day3Part1, answer2022Day3Part2],
     [answer2022Day4Part1, answer2022Day4Part2],
+    [answer2022Day5Part1, answer2022Day5Part2],
   ],
 };
 
