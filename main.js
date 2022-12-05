@@ -29,6 +29,14 @@ import {
   matchScoreTotal as answer2022Day2Part1,
   matchScoreTotal2 as answer2022Day2Part2,
 } from "./2022/Day2.js";
+import {
+  prioSum as answer2022Day3Part1,
+  prioSum2 as answer2022Day3Part2,
+} from "./2022/Day3.js";
+import {
+  subStrCounter1 as answer2022Day4Part1,
+  subStrCounter2 as answer2022Day4Part2,
+} from "./2022/Day4.js";
 
 const answers = {
   2021: [
@@ -41,6 +49,8 @@ const answers = {
   2022: [
     [answer2022Day1Part1, answer2022Day1Part2],
     [answer2022Day2Part1, answer2022Day2Part2],
+    [answer2022Day3Part1, answer2022Day3Part2],
+    [answer2022Day4Part1, answer2022Day4Part2],
   ],
 };
 

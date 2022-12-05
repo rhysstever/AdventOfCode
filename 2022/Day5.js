@@ -1,4 +1,4 @@
-// import { input } from "./inputs/Day#Input.js";
+import { input } from "./inputs/Day5Input.js";
 
 // ===== Part 1 =====
 

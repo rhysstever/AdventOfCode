@@ -1,4 +1,4 @@
-const input = require("./inputs/Day3Input.js").input;
+import { input } from "./inputs/Day3Input.js";
 
 function formatInput(listOfStrAsLongStr) {
 	var strArr = listOfStrAsLongStr.split('\n');
@@ -43,7 +43,7 @@ function convertLetterToNumber(character) {
 function getPrioritySum(input) {
 	var totalPrio = 0;
 	input.forEach(strPair => {
-		similarChars2 = findSimilarChars(strPair[0], strPair[1]);
+		var similarChars2 = findSimilarChars(strPair[0], strPair[1]);
 	
 		similarChars2.forEach(similarChar => {
 			totalPrio += convertLetterToNumber(similarChar)
@@ -53,7 +53,7 @@ function getPrioritySum(input) {
 }
 
 var prioSum = getPrioritySum(formattedInput);
-console.log("Part 1 answer is: " + prioSum);
+// console.log("Part 1 answer is: " + prioSum);
 
 // ===== Part 2 =====
 
@@ -87,6 +87,6 @@ function getPrioritySum2(input) {
 }
 
 var prioSum2 = getPrioritySum2(formattedInput2);
-console.log("Part 2 answer is: " + prioSum2);
+// console.log("Part 2 answer is: " + prioSum2);
 
-module.exports = { prioSum, prioSum2 };
+export { prioSum, prioSum2 };

@@ -1,4 +1,4 @@
-const input = `DsPhSBQQQhqmBDhPDsFwjwsLjlRjlttvjvvtRb
+export const input = `DsPhSBQQQhqmBDhPDsFwjwsLjlRjlttvjvvtRb
 rNJMNNbrHrtjHLHjvwtg
 fNbNzZdrZnMnMPnQShFPDmnqFm
 QWVCFfQffgQCVZzVVpHsHJBqtpspJFRHqq
@@ -298,5 +298,3 @@ HTzDwmSvCvCmsmmvTSwvFwcfRRNRLcQRWNssNNbRWLWL
 PpMgDMDnsWSnjBQnrjbn
 LFcVVGChCFdhdVFZVpVCdVbvQbRrbvBBbBjQSJZrrJrR
 FNwGNCCFHcVTHcFdHHHTDzMzfsgzwpPWMmPflmtt`;
-
-module.exports = {input}
