@@ -1,4 +1,7 @@
-import { input } from "./inputs/Day4Input.js";
+import { input } from "./input.js";
+
+const yearNum = 2022;
+const dayNum = 4;
 
 function formatInput(input) {
 	var formattedInput = [];
@@ -44,12 +47,12 @@ function countOverlaps(pairsArr, allowPartialOverlap) {
 	return count;
 }
 
-var subStrCounter1 = countOverlaps(inputF, false);
-// console.log("Part 1 answer is: " + subStrCounter1);
+var part1Answer = countOverlaps(inputF, false);
+// console.log("Part 1 answer is: " + part1Answer);
 
 // ===== Part 2 =====
 
-var subStrCounter2 = countOverlaps(inputF, true);
-// console.log("Part 2 answer is: " + subStrCounter2);
+var part2Answer = countOverlaps(inputF, true);
+// console.log("Part 2 answer is: " + part2Answer);
 
-export { subStrCounter1, subStrCounter2 };
+export { yearNum, dayNum, part1Answer, part2Answer };

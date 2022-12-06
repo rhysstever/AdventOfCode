@@ -1,4 +1,7 @@
-import { input } from "./inputs/Day3Input.js";
+import { input } from "./input.js";
+
+const yearNum = 2022;
+const dayNum = 3;
 
 function formatInput(listOfStrAsLongStr) {
 	var strArr = listOfStrAsLongStr.split('\n');
@@ -52,8 +55,8 @@ function getPrioritySum(input) {
 	return totalPrio;
 }
 
-var prioSum = getPrioritySum(formattedInput);
-// console.log("Part 1 answer is: " + prioSum);
+var part1Answer = getPrioritySum(formattedInput);
+// console.log("Part 1 answer is: " + part1Answer);
 
 // ===== Part 2 =====
 
@@ -86,7 +89,7 @@ function getPrioritySum2(input) {
 	return totalPrio;
 }
 
-var prioSum2 = getPrioritySum2(formattedInput2);
-// console.log("Part 2 answer is: " + prioSum2);
+var part2Answer = getPrioritySum2(formattedInput2);
+// console.log("Part 2 answer is: " + part2Answer);
 
-export { prioSum, prioSum2 };
+export { yearNum, dayNum, part1Answer, part2Answer };

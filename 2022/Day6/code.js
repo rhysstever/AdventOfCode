@@ -1,4 +1,7 @@
-import { input } from "./inputs/Day6Input.js";
+import { input } from "./input.js";
+
+const yearNum = 2022;
+const dayNum = 6;
 
 const inputCharArr = input.split("");
 
@@ -18,12 +21,12 @@ function findMarkerStartingIndex(charArr, numOfChars) {
 	return -1;
 }
 
-var startOfPacketMarker = findMarkerStartingIndex(inputCharArr, 4);
-// console.log("Part 1 answer is: " + startOfPacketMarker);
+var part1Answer = findMarkerStartingIndex(inputCharArr, 4);
+// console.log("Part 1 answer is: " + part1Answer);
 
 // ===== Part 2 =====
 
-var startOfPacketMessage = findMarkerStartingIndex(inputCharArr, 14);
-// console.log("Part 2 answer is: " + startOfPacketMessage);
+var part2Answer = findMarkerStartingIndex(inputCharArr, 14);
+// console.log("Part 2 answer is: " + part2Answer);
 
-export { startOfPacketMarker, startOfPacketMessage };
+export { yearNum, dayNum, part1Answer, part2Answer };

@@ -1,4 +1,7 @@
-import { layout, commands } from "./inputs/Day5Input.js";
+import { layout, commands } from "./input.js";
+
+const yearNum = 2022;
+const dayNum = 5;
 
 function copy2dArr(initLayout) {
 	var newArray = [];
@@ -32,7 +35,6 @@ function formatCommands(commands) {
 	return commandsF;
 }
 
-var initLayout1 = copy2dArr(layout);
 const commandsF = formatCommands(commands);
 
 // ===== Part 1 =====
@@ -65,8 +67,9 @@ function getTopCrates(rowsOfCrates) {
 	return returnStr;
 }
 
-var part1Layout = getTopCrates(issueCommands(initLayout1, commandsF));
-// console.log("Part 1 answer is: " + part1Layout);
+var initLayout1 = copy2dArr(layout);
+var part1Answer = getTopCrates(issueCommands(initLayout1, commandsF));
+// console.log("Part 1 answer is: " + part1Answer);
 
 // ===== Part 2 =====
 
@@ -89,7 +92,7 @@ function issueCommands2(layout2, commands) {
 }
 
 var initLayout2 = copy2dArr(layout);
-var part2Layout = getTopCrates(issueCommands2(initLayout2, commandsF));
-// console.log("Part 2 answer is: " + part2Layout);
+var part2Answer = getTopCrates(issueCommands2(initLayout2, commandsF));
+// console.log("Part 2 answer is: " + part2Answer);
 
-export { part1Layout, part2Layout };
+export { yearNum, dayNum, part1Answer, part2Answer };

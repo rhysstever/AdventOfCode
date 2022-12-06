@@ -1,4 +1,7 @@
-import { input } from "./inputs/Day1Input.js";
+import { input } from "./input.js";
+
+const yearNum = 2021;
+const dayNum = 1;
 
 // ===== Part 1 =====
 
@@ -9,7 +12,8 @@ for (var i = 1; i < input.length; i++) {
   if (currentDepth > prevDepth) increases++;
 }
 
-// console.log("Part 1 answer is: " + increases);
+var part1Answer = increases;
+// console.log("Part 1 answer is: " + part1Answer);
 
 // ===== Part 2 =====
 
@@ -20,6 +24,7 @@ for (var i = 1; i < input.length - 2; i++) {
   if (nextDepthSum > currentDepthSum) sumIncreases++;
 }
 
-// console.log("Part 2 answer is: " + sumIncreases);
+var part2Answer = sumIncreases;
+// console.log("Part 2 answer is: " + part2Answer);
 
-export { increases, sumIncreases };
+export { yearNum, dayNum, part1Answer, part2Answer };

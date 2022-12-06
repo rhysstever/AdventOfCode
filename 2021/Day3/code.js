@@ -1,4 +1,7 @@
-import { input } from "./inputs/Day3Input.js";
+import { input } from "./input.js";
+
+const yearNum = 2021;
+const dayNum = 3;
 
 // ===== Part 1 =====
 
@@ -32,8 +35,8 @@ for (var place = 0; place < input[0].split("").length; place++) {
   }
 }
 
-var powerConsumption = parseInt(gammaRate, 2) * parseInt(epsilonRate, 2);
-// console.log("Part 1 answer is: " + powerConsumption);
+var part1Answer = parseInt(gammaRate, 2) * parseInt(epsilonRate, 2);
+// console.log("Part 1 answer is: " + part1Answer);
 
 // ===== Part 2 =====
 
@@ -65,7 +68,7 @@ function findRating(isSearchingForMostCommonBit) {
   return parseInt(remainingBins[0], 2);
 }
 
-var lifeSupportRating = findRating(true) * findRating(false);
-// console.log("Part 2 answer is: " + lifeSupportRating);
+var part2Answer = findRating(true) * findRating(false);
+// console.log("Part 2 answer is: " + part2Answer);
 
-export { powerConsumption, lifeSupportRating };
+export { yearNum, dayNum, part1Answer, part2Answer };
