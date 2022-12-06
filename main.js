@@ -41,6 +41,10 @@ import {
   part1Layout as answer2022Day5Part1,
   part2Layout as answer2022Day5Part2,
 } from "./2022/Day5.js";
+import {
+  startOfPacketMarker as answer2022Day6Part1,
+  startOfPacketMessage as answer2022Day6Part2,
+} from "./2022/Day6.js";
 
 const answers = {
   2021: [
@@ -56,6 +60,7 @@ const answers = {
     [answer2022Day3Part1, answer2022Day3Part2],
     [answer2022Day4Part1, answer2022Day4Part2],
     [answer2022Day5Part1, answer2022Day5Part2],
+    [answer2022Day6Part1, answer2022Day6Part2],
   ],
 };
 

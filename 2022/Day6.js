@@ -18,12 +18,12 @@ function findMarkerStartingIndex(charArr, numOfChars) {
 	return -1;
 }
 
-var part1Answer = findMarkerStartingIndex(inputCharArr, 4);
-console.log("Part 1 answer is: " + part1Answer);
+var startOfPacketMarker = findMarkerStartingIndex(inputCharArr, 4);
+// console.log("Part 1 answer is: " + startOfPacketMarker);
 
 // ===== Part 2 =====
 
-var part2Answer = findMarkerStartingIndex(inputCharArr, 14);
-console.log("Part 2 answer is: " + part2Answer);
+var startOfPacketMessage = findMarkerStartingIndex(inputCharArr, 14);
+// console.log("Part 2 answer is: " + startOfPacketMessage);
 
-export { part1Answer, part2Answer };
+export { startOfPacketMarker, startOfPacketMessage };
