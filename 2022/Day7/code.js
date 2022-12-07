@@ -114,7 +114,7 @@ function findSmallestDirToCreateEnoughSpace(
   var dirSizeArr = getDirSizeArrFromSuming(root);
   var sizeOfRootDir = sumTotalSize(root, []);
   dirSizeArr.push(sizeOfRootDir);
-  var unusedSpace = totalSpace - sizeOfRootDir;
+  var unusedSpace = totalSystemSpace - sizeOfRootDir;
 
   dirSizeArr = dirSizeArr
     .filter((dirSize) => unusedSpace + dirSize > spaceNeeded)
