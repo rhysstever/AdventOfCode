@@ -49,6 +49,10 @@ import {
   part1Answer as answer2022Day7Part1,
   part2Answer as answer2022Day7Part2,
 } from "./2022/Day7/code.js";
+import {
+  part1Answer as answer2022Day8Part1,
+  part2Answer as answer2022Day8Part2,
+} from "./2022/Day8/code.js";
 
 const answers = {
   2021: [
@@ -66,6 +70,7 @@ const answers = {
     [answer2022Day5Part1, answer2022Day5Part2],
     [answer2022Day6Part1, answer2022Day6Part2],
     [answer2022Day7Part1, answer2022Day7Part2],
+    [answer2022Day8Part1, answer2022Day8Part2],
   ],
 };
 

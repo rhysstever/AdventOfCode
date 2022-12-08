@@ -1,4 +1,4 @@
-import { testInput, input } from "./input.js";
+import { input } from "./input.js";
 import { sortLowestToHighest } from "../../2021/Day6/code.js";
 
 const yearNum = 2022;
