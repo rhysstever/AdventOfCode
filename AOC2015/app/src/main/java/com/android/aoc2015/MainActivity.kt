@@ -51,5 +51,6 @@ fun AOC2015() {
         Text(text = "Advent of Code $year Answers")
         AOCDay1()
         AOCDay2()
+        AOCDay3()
     }
 }
