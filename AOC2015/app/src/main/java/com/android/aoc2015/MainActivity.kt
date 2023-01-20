@@ -52,5 +52,6 @@ fun AOC2015() {
         AOCDay1()
         AOCDay2()
         AOCDay3()
+        AOCDay4()
     }
 }
