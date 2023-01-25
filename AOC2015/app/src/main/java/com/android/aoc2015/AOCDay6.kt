@@ -19,13 +19,13 @@ fun AOCDay6() {
     val dayNum = 6
 
     val grid = Array(1000) { BooleanArray(1000) }
-    val gridTest = Array(4) { BooleanArray(4) }
+    val grid2 = Array(1000) { IntArray(1000) }
 
     Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
         Text(text = "Day $dayNum:")
         AOCDay6Part1(grid, day6RawInput)
         Text(text = "|")
-        AOCDay6Part2("")
+        AOCDay6Part2(grid2, day6RawInput)
     }
 }
 
@@ -34,13 +34,13 @@ enum class InstructionType {
 }
 
 fun followInstructions(grid: Array<BooleanArray>, instructionType: InstructionType, startingCoord: Pair<Int, Int>, endingCoord: Pair<Int, Int>) {
-    for(i in startingCoord.first until endingCoord.first) {
-        for(j in startingCoord.second until endingCoord.second) {
-            when(instructionType) {
-                InstructionType.On -> grid[i][j] = true
-                InstructionType.Off -> grid[i][j] = false
-                InstructionType.Toggle -> grid[i][j] = !grid[i][j]
-                else -> {}
+    for(i in startingCoord.first until endingCoord.first + 1) {
+        for(j in startingCoord.second until endingCoord.second + 1) {
+            grid[i][j] = when(instructionType) {
+                InstructionType.On -> true
+                InstructionType.Off -> false
+                InstructionType.Toggle -> !grid[i][j]
+                else -> grid[i][j]
             }
         }
     }
@@ -67,11 +67,11 @@ fun AOCDay6Part1(grid: Array<BooleanArray>, input: List<String>) {
             "toggle" -> InstructionType.Toggle
             else -> InstructionType.None
         }
-        val startingCoord = Pair<Int, Int>(
+        val startingCoord = Pair(
             parsedInstruction[1].split(",")[0].toInt(),
             parsedInstruction[1].split(",")[1].toInt()
         )
-        val endingCoord = Pair<Int, Int>(
+        val endingCoord = Pair(
             parsedInstruction[2].split(",")[0].toInt(),
             parsedInstruction[2].split(",")[1].toInt()
         )
@@ -87,9 +87,58 @@ fun AOCDay6Part1(grid: Array<BooleanArray>, input: List<String>) {
     Text(text = "Part 1 = ${countLightsOn(grid)}")
 }
 
-@Composable
-fun AOCDay6Part2(input: String) {
-    val part2Answer = 0
+fun followInstructions2(grid: Array<IntArray>, instructionType: InstructionType, startingCoord: Pair<Int, Int>, endingCoord: Pair<Int, Int>) {
+    for(i in startingCoord.first until endingCoord.first + 1) {
+        for(j in startingCoord.second until endingCoord.second + 1) {
+            grid[i][j] += when(instructionType) {
+                InstructionType.On -> 1
+                InstructionType.Off -> -1
+                InstructionType.Toggle -> 2
+                else -> 0
+            }
 
-    Text(text = "Part 2 = $part2Answer")
+            if(grid[i][j] < 0)
+                grid[i][j] = 0
+        }
+    }
+}
+
+fun totalLightBrightness(grid: Array<IntArray>): Int {
+    var total = 0
+    grid.forEach { row ->
+        row.forEach {
+            total += it
+        }
+    }
+    return total
+}
+
+@Composable
+fun AOCDay6Part2(grid: Array<IntArray>, input: List<String>) {
+    input.forEach {
+        val parsedInstruction = it.split(" ")
+        val instructionType = when(parsedInstruction[0]) {
+            "on" -> InstructionType.On
+            "off" -> InstructionType.Off
+            "toggle" -> InstructionType.Toggle
+            else -> InstructionType.None
+        }
+        val startingCoord = Pair(
+            parsedInstruction[1].split(",")[0].toInt(),
+            parsedInstruction[1].split(",")[1].toInt()
+        )
+        val endingCoord = Pair(
+            parsedInstruction[2].split(",")[0].toInt(),
+            parsedInstruction[2].split(",")[1].toInt()
+        )
+
+        followInstructions2(
+            grid,
+            instructionType,
+            startingCoord,
+            endingCoord
+        )
+    }
+
+    Text(text = "Part 2 = ${totalLightBrightness(grid)}")
 }
