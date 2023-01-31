@@ -23,48 +23,101 @@ fun AOCDay1() {
         Text(text = "Day $dayNum:")
         AOCDay1Part1(day1RawInput)
         Text(text = "|")
-        AOCDay1Part2("")
+        AOCDay1Part2(day1RawInput)
     }
 }
 
-fun processDirection(currentMovement: MutableList<Int>, currentDirectionIndex: Int, direction: String): Int {
-    var newCurrentDirectionIndex = currentDirectionIndex
+fun walkInstructions(input: List<String>): Int {
+    var pos = Pair(0, 0)
+    var currentDirectionChar = 'U'
 
-    newCurrentDirectionIndex += when(direction.toCharArray()[0]) {
+    input.forEach {
+        val turnChar = it.toCharArray()[0]
+        currentDirectionChar = turn(currentDirectionChar, turnChar)
+
+        val distance = it.substring(1).toInt()
+        pos = addMove(pos, findMove(Pair(currentDirectionChar, distance)))
+    }
+
+    return totalBlocksAway(pos)
+}
+
+fun turn(currentDirectionChar: Char, turnChar: Char): Char {
+    val directionCharsList = listOf('U', 'R', 'D', 'L')
+
+    var currentIndex = directionCharsList.indexOf(currentDirectionChar)
+    currentIndex += when(turnChar) {
+        'R' -> 1
         'L' -> -1
-        'R' -> +1
         else -> 0
     }
 
-    if(newCurrentDirectionIndex < 0)
-        newCurrentDirectionIndex = currentMovement.count() - 1
-    else if(newCurrentDirectionIndex >= currentMovement.count())
-        newCurrentDirectionIndex = 0
+    // Clamp to directions list
+    if(currentIndex < 0)
+        currentIndex = directionCharsList.count() - 1
+    else if(currentIndex >= directionCharsList.count())
+        currentIndex = 0
 
-    val walkAmount = direction.substring(1).toInt()
-    currentMovement[newCurrentDirectionIndex] += walkAmount
+    return directionCharsList[currentIndex]
+}
 
-    return newCurrentDirectionIndex
+fun findMove(instruction: Pair<Char, Int>): Pair<Int, Int> {
+    return when(instruction.first) {
+        'U' -> Pair(instruction.second, 0)
+        'R' -> Pair(0, instruction.second)
+        'D' -> Pair(-instruction.second, 0)
+        'L' -> Pair(0, -instruction.second)
+        else -> Pair(0, 0)
+    }
+}
+
+fun addMove(currentPos: Pair<Int, Int>, move: Pair<Int, Int>): Pair<Int, Int> {
+    return Pair(
+        currentPos.first + move.first,
+        currentPos.second + move.second
+    )
+}
+
+fun totalBlocksAway(distanceSums: Pair<Int, Int>): Int {
+    return abs(distanceSums.first) + abs(distanceSums.second)
 }
 
 @Composable
 fun AOCDay1Part1(input: List<String>) {
-    var directions = mutableListOf(0, 0, 0, 0)
-    var directionIndex = 0
+    val totalBlocksAwayDist = walkInstructions(input)
+
+    Text(text = "Part 1 = $totalBlocksAwayDist")
+}
+
+fun walkInstructions2(input: List<String>): Int {
+    var pos = Pair(0, 0)
+    var currentDirectionChar = 'U'
+    val pastLocations = mutableListOf<Pair<Int, Int>>()
 
     input.forEach {
-        directionIndex = processDirection(directions, directionIndex, it)
-//        Log.v("AOC Answer", "$it | ${directions.toString()}")
+        val turnChar = it.toCharArray()[0]
+        currentDirectionChar = turn(currentDirectionChar, turnChar)
+
+        val distance = it.substring(1).toInt()
+
+        for(step in 1..distance) {
+            pos = addMove(pos, findMove(Pair(currentDirectionChar, 1)))
+//            Log.v("AOC Answer", pos.toString())
+
+            if(pastLocations.contains(pos))
+                return totalBlocksAway(pos)
+            else
+                pastLocations.add(pos)
+        }
     }
 
-    val totalBlocksAway = abs(directions[0] - directions[2]) + abs(directions[1] - directions[3])
-
-    Text(text = "Part 1 = $totalBlocksAway")
+    Log.v("AOC Answer", "Error! No past location visited twice")
+    return totalBlocksAway(pos)
 }
 
 @Composable
-fun AOCDay1Part2(input: String) {
-    val part2Answer = 0
+fun AOCDay1Part2(input: List<String>) {
+    val totalBlocksAwayDist = walkInstructions2(input)
 
-    Text(text = "Part 2 = $part2Answer")
+    Text(text = "Part 2 = $totalBlocksAwayDist")
 }
