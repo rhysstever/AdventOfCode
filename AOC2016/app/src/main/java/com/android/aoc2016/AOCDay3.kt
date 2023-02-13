@@ -44,6 +44,7 @@ fun AOCDay3Part1(input: List<String>) {
             trianglesCount++
     }
 
+    Log.v("Answer", "Part 1 Answer: $trianglesCount")
     Text(text = "Part 1 = $trianglesCount")
 }
 
@@ -62,5 +63,6 @@ fun AOCDay3Part2(input: List<String>) {
         }
     }
 
+    Log.v("Answer", "Part 2 Answer: $trianglesCount")
     Text(text = "Part 2 = $trianglesCount")
 }

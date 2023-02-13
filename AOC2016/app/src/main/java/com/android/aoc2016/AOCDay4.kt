@@ -79,12 +79,12 @@ fun AOCDay4Part1(input: List<String>) {
         val name = it.split('[')[0].replace("-", "").dropLast(3)
         val sectorID = it.split('[')[0].split('-').last().toInt()
         val checkSum = it.split('[')[1].dropLast(1)
-//        Log.v("Answer", "$name $sectorID $checkSum")
 
         if(isValidRoom(name, checkSum))
             sectorIDSum += sectorID
     }
 
+    Log.v("Answer", "Part 1 Answer: $sectorIDSum")
     Text(text = "Part 1 = $sectorIDSum")
 }
 
@@ -121,8 +121,10 @@ fun AOCDay4Part2(input: List<String>) {
         val decryptedName = decryptName(name, sectorID)
         if(decryptedName.contains("pole", true)){
             Log.v("Answer", "$decryptedName $sectorID")
+            part2Answer = sectorID
         }
     }
 
+    Log.v("Answer", "Part 2 Answer: $part2Answer")
     Text(text = "Part 2 = $part2Answer")
 }

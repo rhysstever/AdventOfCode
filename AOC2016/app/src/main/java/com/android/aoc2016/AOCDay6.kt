@@ -1,5 +1,6 @@
 package com.android.aoc2016
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Text
@@ -39,7 +40,7 @@ fun createColumnString(input: List<String>, columnIndex: Int): String {
 fun AOCDay6Part1(input: List<String>) {
     var part1Answer = ""
 
-    var columnStrings = mutableListOf<String>()
+    val columnStrings = mutableListOf<String>()
     for (i in 0 until input[0].length) {
         columnStrings.add(createColumnString(input, i))
     }
@@ -48,6 +49,7 @@ fun AOCDay6Part1(input: List<String>) {
         part1Answer += findMostCommonChar(it)
     }
 
+    Log.v("Answer", "Part 1 Answer: $part1Answer")
     Text(text = "Part 1 = $part1Answer")
 }
 
@@ -76,7 +78,7 @@ fun findLeastCommonChar(string: String): Char {
 fun AOCDay6Part2(input: List<String>) {
     var part2Answer = ""
 
-    var columnStrings = mutableListOf<String>()
+    val columnStrings = mutableListOf<String>()
     for (i in 0 until input[0].length) {
         columnStrings.add(createColumnString(input, i))
     }
@@ -85,5 +87,6 @@ fun AOCDay6Part2(input: List<String>) {
         part2Answer += findLeastCommonChar(it)
     }
 
+    Log.v("Answer", "Part 2 Answer: $part2Answer")
     Text(text = "Part 2 = $part2Answer")
 }

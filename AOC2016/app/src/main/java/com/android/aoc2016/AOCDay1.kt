@@ -86,6 +86,7 @@ fun totalBlocksAway(distanceSums: Pair<Int, Int>): Int {
 fun AOCDay1Part1(input: List<String>) {
     val totalBlocksAwayDist = walkInstructions(input)
 
+    Log.v("Answer", "Part 1 Answer: $totalBlocksAwayDist")
     Text(text = "Part 1 = $totalBlocksAwayDist")
 }
 
@@ -119,5 +120,6 @@ fun walkInstructions2(input: List<String>): Int {
 fun AOCDay1Part2(input: List<String>) {
     val totalBlocksAwayDist = walkInstructions2(input)
 
+    Log.v("Answer", "Part 2 Answer: $totalBlocksAwayDist")
     Text(text = "Part 2 = $totalBlocksAwayDist")
 }

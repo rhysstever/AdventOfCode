@@ -70,6 +70,7 @@ fun AOCDay2Part1(input: List<String>) {
         currentPos = findPosOfNumber(currentNum)
     }
 
+    Log.v("Answer", "Part 1 Answer: $code")
     Text(text = "Part 1 = $code")
 }
 
@@ -138,5 +139,6 @@ fun AOCDay2Part2(input: List<String>) {
         currentPos = findPosOfChar(grid2, currentChar)
     }
 
+    Log.v("Answer", "Part 2 Answer: $code")
     Text(text = "Part 2 = $code")
 }
