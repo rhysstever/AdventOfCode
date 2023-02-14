@@ -20,15 +20,44 @@ fun AOCDay7() {
 
     Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
         Text(text = "Day $dayNum:")
-        AOCDay7Part1("")
+        AOCDay7Part1(day7TestInput)
         Text(text = "|")
         AOCDay7Part2("")
     }
 }
 
+fun doesSupportTLS(ipAddress: String): Boolean {
+    val strings = ipAddress.replace("[", "]").split("]")
+    return (hasPairAndReverse(strings[0])
+                || hasPairAndReverse(strings[2]))
+            && !hasPairAndReverse(strings[1])
+}
+
+fun hasPairAndReverse(input: String): Boolean {
+    for(startOfPair in 0 until input.length - 1) {
+        // Get pair
+        val pair = input.substring(startOfPair, startOfPair + 2)
+        // Check pair
+        if(pair != pair.reversed()) {
+            if(input.indexOf(pair.reversed(), startOfPair + 2) != -1) {
+//                Log.v("Answer: P&R", "$input true")
+                return true
+            }
+        }
+    }
+
+//    Log.v("Answer: P&R", "$input false")
+    return false
+}
+
 @Composable
-fun AOCDay7Part1(input: String) {
-    val part1Answer = 0
+fun AOCDay7Part1(input: List<String>) {
+    var part1Answer = 0
+
+    input.forEach {
+        if(doesSupportTLS(it))
+            part1Answer++
+    }
 
     Log.v("Answer", "Part 1 Answer: $part1Answer")
     Text(text = "Part 1 = $part1Answer")
