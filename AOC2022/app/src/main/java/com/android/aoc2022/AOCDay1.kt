@@ -19,13 +19,13 @@ fun AOCDay1Preview() {
 fun AOCDay1() {
     val dayNum = 1
 
-    val formattedInput = formatInput(day1RawInput)
+    val formattedInput = formatStringByLineThenByNumber(day1RawInput)
 
     AOCDay1Part1(formattedInput)
     AOCDay1Part2(formattedInput)
 }
 
-fun formatInput(strInput: String): List<List<Int>> {
+fun formatStringByLineThenByNumber(strInput: String): List<List<Int>> {
     val formattedInput = mutableListOf<List<Int>>()
 
     var chunk = mutableListOf<Int>()

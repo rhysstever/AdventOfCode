@@ -20,12 +20,8 @@ fun AOCDayTempPreview() {
 fun AOCDayTemp() {
     val dayNum = 0
 
-    Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-        Text(text = "Day $dayNum:")
-        AOCDayTempPart1("")
-        Text(text = "|")
-        AOCDayTempPart2("")
-    }
+    AOCDayTempPart1("")
+    AOCDayTempPart2("")
 }
 
 @Composable
