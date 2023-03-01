@@ -44,14 +44,5 @@ fun DefaultPreview() {
 
 @Composable
 fun AOC2022() {
-    val year = 2022
-
-    Column(
-        modifier = Modifier.padding(8.dp),
-        verticalArrangement = Arrangement.spacedBy(4.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(text = "Advent of Code $year Answers")
-
-    }
+    Text(text = "Hello World")
 }
