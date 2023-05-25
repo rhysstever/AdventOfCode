@@ -1,5 +1,6 @@
 package com.android.aoc2015
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Text
@@ -51,6 +52,7 @@ fun AOCDay3Part1(input: String) {
     }
 
     Text(text = "Part 1 = ${visitedHousesList.count()}")
+    Log.v("Answer: Day 3", "Part 1 = ${visitedHousesList.count()}")
 }
 
 @Composable
@@ -80,4 +82,5 @@ fun AOCDay3Part2(input: String) {
     }
 
     Text(text = "Part 2 = ${visitedHousesList.count()}")
+    Log.v("Answer: Day 3", "Part 2 = ${visitedHousesList.count()}")
 }

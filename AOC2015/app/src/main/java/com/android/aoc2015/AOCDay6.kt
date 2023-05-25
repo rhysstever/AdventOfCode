@@ -85,6 +85,7 @@ fun AOCDay6Part1(grid: Array<BooleanArray>, input: List<String>) {
     }
 
     Text(text = "Part 1 = ${countLightsOn(grid)}")
+    Log.v("Answer: Day 6", "Part 1 = ${countLightsOn(grid)}")
 }
 
 fun followInstructions2(grid: Array<IntArray>, instructionType: InstructionType, startingCoord: Pair<Int, Int>, endingCoord: Pair<Int, Int>) {
@@ -141,4 +142,5 @@ fun AOCDay6Part2(grid: Array<IntArray>, input: List<String>) {
     }
 
     Text(text = "Part 2 = ${totalLightBrightness(grid)}")
+    Log.v("Answer: Day 6", "Part 2 = ${totalLightBrightness(grid)}")
 }

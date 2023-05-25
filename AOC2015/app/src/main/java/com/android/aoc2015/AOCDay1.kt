@@ -41,6 +41,7 @@ fun AOCDay1Part1(input: CharArray) {
     }
 
     Text(text = "Part 1 = $currentFloor")
+    Log.v("Answer: Day 1", "Part 1 = $currentFloor")
 }
 
 @Composable
@@ -63,4 +64,5 @@ fun AOCDay1Part2(input: CharArray) {
     }
 
     Text(text = "Part 2 = $basementIndex")
+    Log.v("Answer: Day 1", "Part 2 = $basementIndex")
 }

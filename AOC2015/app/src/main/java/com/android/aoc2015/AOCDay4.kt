@@ -1,5 +1,6 @@
 package com.android.aoc2015
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Text
@@ -54,6 +55,7 @@ fun AOCDay4Part1(input: String) {
     } while (!HasLeadingZeros(md5Hash, 5))
 
     Text(text = "Part 1 = $answerNum")
+    Log.v("Answer: Day 4", "Part 1 = $answerNum")
 }
 
 @Composable
@@ -67,4 +69,5 @@ fun AOCDay4Part2(input: String) {
     } while (!HasLeadingZeros(md5Hash, 6))
 
     Text(text = "Part 2 = $answerNum")
+    Log.v("Answer: Day 4", "Part 2 = $answerNum")
 }

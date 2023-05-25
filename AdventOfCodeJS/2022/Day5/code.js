@@ -14,7 +14,7 @@ function copy2dArr(initLayout) {
 
 function formatCommands(commands) {
 	var commandsF = [];
-	commands.split("\n").forEach(commandLine => {
+	commands.split("\n").forEach((commandLine) => {
 		var newCommandLineF = commandLine.split(" ");
 
 		var index1 = newCommandLineF.indexOf("move");
@@ -32,6 +32,7 @@ function formatCommands(commands) {
 
 		commandsF.push(newCommandLineF);
 	});
+	console.log(commandsF);
 	return commandsF;
 }
 
@@ -46,12 +47,12 @@ function moveCrate(layout1, startingIndex, endingIndex) {
 }
 
 function issueCommands(layout1, commands) {
-	commands.forEach(command => {
+	commands.forEach((command) => {
 		var moveCount = parseInt(command[0]);
 		var startingIndex = parseInt(command[1]) - 1;
 		var endingIndex = parseInt(command[2]) - 1;
 
-		for(var i = 0; i < moveCount; i++) {
+		for (var i = 0; i < moveCount; i++) {
 			layout1 = moveCrate(layout1, startingIndex, endingIndex);
 		}
 	});
@@ -60,7 +61,7 @@ function issueCommands(layout1, commands) {
 
 function getTopCrates(rowsOfCrates) {
 	var returnStr = "";
-	rowsOfCrates.forEach(row => {
+	rowsOfCrates.forEach((row) => {
 		var lastIndex = row.length - 1;
 		returnStr += row[lastIndex];
 	});
@@ -81,7 +82,7 @@ function moveCrate2(layout2, amountMoved, startingIndex, endingIndex) {
 }
 
 function issueCommands2(layout2, commands) {
-	commands.forEach(command => {
+	commands.forEach((command) => {
 		var moveCount = parseInt(command[0]);
 		var startingIndex = parseInt(command[1]) - 1;
 		var endingIndex = parseInt(command[2]) - 1;

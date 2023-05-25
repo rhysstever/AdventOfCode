@@ -1,5 +1,6 @@
 package com.android.aoc2015
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Text
@@ -56,6 +57,7 @@ fun AOCDay2Part1(input: List<List<Int>>) {
     }
 
     Text(text = "Part 1 = $totalWrappingPaper")
+    Log.v("Answer: Day 2", "Part 1 = $totalWrappingPaper")
 }
 
 @Composable
@@ -72,4 +74,5 @@ fun AOCDay2Part2(input: List<List<Int>>) {
     }
 
     Text(text = "Part 2 = $totalRibbon")
+    Log.v("Answer: Day 2", "Part 2 = $totalRibbon")
 }

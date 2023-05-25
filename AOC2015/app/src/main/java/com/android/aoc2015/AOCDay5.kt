@@ -80,6 +80,7 @@ fun AOCDay5Part1(input: List<String>) {
     }
 
     Text(text = "Part 1 = $niceStrCount")
+    Log.v("Answer: Day 5", "Part 1 = $niceStrCount")
 }
 
 fun IsNiceStr2(str: String, num: Int): Boolean {
@@ -121,4 +122,5 @@ fun AOCDay5Part2(input: List<String>) {
     }
 
     Text(text = "Part 2 = $niceStrCount")
+    Log.v("Answer: Day 5", "Part 2 = $niceStrCount")
 }

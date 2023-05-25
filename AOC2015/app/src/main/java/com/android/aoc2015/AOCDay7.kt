@@ -42,7 +42,7 @@ fun setValues(instructionList: List<List<String>>): Map<String, String> {
         map[it[1]] = it[0]
     }
 
-    Log.v("AOC Answer", map.toString())
+//    Log.v("AOC Answer", map.toString())
     return map
 }
 
@@ -92,7 +92,7 @@ fun process(map: Map<String, String>) {
             var mapVal = map[it.value]
             if(mapVal != null)
                 newVal = mapVal
-            Log.v("AOC Answer", "$key: $newVal")
+//            Log.v("AOC Answer", "$key: $newVal")
         }
     }
 }
